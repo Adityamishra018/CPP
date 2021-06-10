@@ -8,13 +8,7 @@ int main() {
 	
 	while(t--){
 	    cin>>D>>d>>P>>Q;
-	    sum = 0;
-	    for(long i=0;i<D;i+=d,P+=Q){
-	        if(i + d <= D)
-	            sum += P*d;
-	        else
-	            sum += P*(D-i);
-	    }
+	    sum = P*(D/d)*d + ((Q*((D/d)-1)*(D/d)/2) * d)+ (D%d)*(P + (D/d)*Q); 
 	    cout<<sum<<"\n";
 	}
 	return 0;
