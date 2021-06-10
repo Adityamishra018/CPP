@@ -3,14 +3,6 @@
 
 using namespace std;
 
-int checkprod(int a,int b){
-    return 0;
-}
-
-int valuefor(){
-    return 0;
-}
-
 ll raiseto(ll x,ll y,ll p){
     ll ans = 1;
     x = x% p;
