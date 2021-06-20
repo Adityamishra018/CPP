@@ -33,28 +33,18 @@ int dfs(int x){
 }
 
 int main() {
-    int t;
-    scanf("%d",&t);
-    while(t--){
-        scanf("%d%d", &n,&m);
-        for(int i=0,a,b; i<m;i++){
-            scanf("%d%d", &a,&b);
-            w[a][b] = w[b][a] = 1;
-        }
-        dfs(1);
-        printf("%d\n", ans-1);  
-        /*The -1 part is becuase the que guarantees that given graph would always have even no of nodes
-        so calling dfs on vertex 1(or any node) will always receive odd no of childs, so that way we end up
-        incrementing global ans by extra 1 at the end, because the entire graph given in que can be removed from
-        its hypothetical parent node as it(the given graph) contains even no of nodes*/
-        
-        //clear
-        ans = 0;
-        for(int i=0;i<105;++i){
-            v[i] = 0;
-            for(int j=0;j<105;++j)
-                w[i][j] = 0;
-        }   
+    
+    scanf("%d%d", &n,&m);
+    for(int i=0,a,b; i<m;i++){
+        scanf("%d%d", &a,&b);
+        w[a][b] = w[b][a] = 1;
     }
+    dfs(1);
+    printf("%d\n", ans-1);  
+    /*The -1 part is becuase the que guarantees that given graph would always have even no of nodes
+    so calling dfs on vertex 1(or any node) will always receive odd no of childs, so that way we end up
+    incrementing global ans by extra 1 at the end, because the entire graph given in que can be removed from
+    its hypothetical parent node as it(the given graph) contains even no of nodes*/
+    
     return 0;
 }
